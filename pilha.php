@@ -7,13 +7,21 @@ function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
 
-    //Criando array com tamanho fixo no php
-    // $arrayFixo = new SplFixedArray(2);
+    //Temos que tratar as exceções para que o php continue a execução do programa
+    try{
+        //Criando array com tamanho fixo no php
+        $arrayFixo = new SplFixedArray(2);
 
-    // $arrayFixo[3] = 'Valor';
+        $arrayFixo[3] = 'Valor';
 
-    //divide tratando os numeros como inteiros
-    $divisao = intdiv(5, 0);   //DivisionByZeroError
+        //divide tratando os numeros como inteiros
+        //$divisao = intdiv(5, 0);   //DivisionByZeroError
+    }
+    //catch = pegar de pegar o erro ou exception
+    catch(RuntimeException $erro){
+        echo "Aconteceu um erro na função 1" . PHP_EOL;
+    }
+
 
     funcao2();
 
