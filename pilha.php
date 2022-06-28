@@ -6,6 +6,15 @@
 function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
+
+    //Criando array com tamanho fixo no php
+    // $arrayFixo = new SplFixedArray(2);
+
+    // $arrayFixo[3] = 'Valor';
+
+    //divide tratando os numeros como inteiros
+    $divisao = intdiv(5, 0);   //DivisionByZeroError
+
     funcao2();
 
     //Quero tirar uma foto de como está a pilha de execução nessa linha
