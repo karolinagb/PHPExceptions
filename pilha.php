@@ -9,21 +9,15 @@ function funcao1()
 
     //Temos que tratar as exceções para que o php continue a execução do programa
     try{
-        //Criando array com tamanho fixo no php
-        $arrayFixo = new SplFixedArray(2);
-
-        $arrayFixo[3] = 'Valor';
-
-        //divide tratando os numeros como inteiros
-        //$divisao = intdiv(5, 0);   //DivisionByZeroError
+        funcao2();
     }
     //catch = pegar de pegar o erro ou exception
     catch(RuntimeException $erro){
-        echo "Aconteceu um erro na função 1" . PHP_EOL;
+        echo "Na função 1 resolvi o problema da função 2" . PHP_EOL;
     }
 
-
-    funcao2();
+    //Fatal erro = eror fatal é quando acontece uma exceção que ninguem sabe lidar e isso interrompe a execução do programa
+    //É comum dizermos que matamos esse processo
 
     //Quero tirar uma foto de como está a pilha de execução nessa linha
     //debug_backtrace() - trilha da pilha que foi executado ate aq
@@ -37,6 +31,16 @@ function funcao1()
 function funcao2()
 {
     echo 'Entrei na função 2' . PHP_EOL;
+    
+    //divide tratando os numeros como inteiros
+    $divisao = intdiv(5, 0);   //DivisionByZeroError
+
+    //Criando array com tamanho fixo no php
+    $arrayFixo = new SplFixedArray(2);
+
+    $arrayFixo[3] = 'Valor';
+
+
     for ($i = 1; $i <= 5; $i++) {
         echo $i . PHP_EOL;
     }
