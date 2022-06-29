@@ -12,8 +12,20 @@ function funcao1()
         funcao2();
     }
     //catch = pegar de pegar o erro ou exception
-    catch(RuntimeException $erro){
-        echo "Na função 1 resolvi o problema da função 2" . PHP_EOL;
+    // catch(RuntimeException $erro){
+    //     echo "Na função 1 resolvi o problema da função 2" . PHP_EOL;
+    // }
+    // catch(DivisionByZeroError $erro){
+    //     echo "Erro ao dividir um número por 0" . PHP_EOL;
+    // }
+
+    //multi catch ou pegar vários problemas de uma vez:
+    catch(RuntimeException | DivisionByZeroError $problema){
+        echo $problema->getMessage() . PHP_EOL;
+        echo $problema->getLine() . PHP_EOL;
+        //pode pegar como array ou formato como string
+        echo $problema->getTraceAsString() . PHP_EOL;
+        echo "Erro" . PHP_EOL;
     }
 
     //Fatal erro = eror fatal é quando acontece uma exceção que ninguem sabe lidar e isso interrompe a execução do programa
