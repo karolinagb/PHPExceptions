@@ -20,7 +20,10 @@ function funcao1()
     // }
 
     //multi catch ou pegar vários problemas de uma vez:
-    catch(RuntimeException | DivisionByZeroError $problema){
+    //throwable = pega erro e exceção - Podemos usar quando temos situações genericas
+    //Error = pega erros  - é bom especificar qual é para eu entender esse erro melhor
+    //Exception = pega exceções - é bom especificar qual é para eu entender esse erro melhor
+    catch(Throwable $problema){
         echo $problema->getMessage() . PHP_EOL;
         echo $problema->getLine() . PHP_EOL;
         //pode pegar como array ou formato como string
@@ -31,7 +34,7 @@ function funcao1()
         throw new RuntimeException(
             'Exceção foi tratada, mas pega aí', 
             $problema->getCode(),
-            //Qual foi a excecao anterior
+            //Qual foi a problema anterior
             $problema
         );
     }
@@ -53,7 +56,7 @@ function funcao2()
     echo 'Entrei na função 2' . PHP_EOL;
     
     //divide tratando os numeros como inteiros
-    // $divisao = intdiv(5, 0);   //DivisionByZeroError
+     $divisao = intdiv(5, 0);   //DivisionByZeroError
 
     //Criando array com tamanho fixo no php
     // $arrayFixo = new SplFixedArray(2);
