@@ -13,6 +13,12 @@ $conta = new ContaPoupanca(
     )
 );
 $conta->deposita(500);
-$conta->saca(100);
+
+try{
+    $conta->saca(1000);
+}
+catch(SaldoInsuficienteException $ex){
+    echo $ex->getMessage();
+}
 
 echo $conta->recuperaSaldo();
