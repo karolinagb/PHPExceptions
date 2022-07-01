@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-use SaldoInsuficienteException;
+use Alura\Banco\Modelo\Conta\SaldoInsuficienteException;
 
 abstract class Conta
 {

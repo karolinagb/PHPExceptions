@@ -1,7 +1,9 @@
 <?php
 
+namespace Alura\Banco\Modelo\Conta;
+
 //É uma exceção do domínio da minha aplicação
-class SaldoInsuficienteException extends DomainException
+class SaldoInsuficienteException extends \DomainException
 {
     public function __construct(float $valorSaque, float $saldoAtual)
     {
