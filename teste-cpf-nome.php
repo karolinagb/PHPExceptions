@@ -17,6 +17,10 @@ catch(InvalidArgumentException){
 try{
     $pessoa = new Titular(new CPF('123.456.789-99'), 'Kar', new Endereco('A', 'B', 'C', 'D'));
 }
-catch(DomainException){
-    echo "Nome precisa ter pelo menos 5 caracteres";
+catch(DomainException $e){
+    echo $e->getMessage() . PHP_EOL;
+    // echo "Nome precisa ter pelo menos 5 caracteres" . PHP_EOL;
+}
+finally{
+    echo "Ainda assim: Olá :)";
 }
