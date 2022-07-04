@@ -1,5 +1,7 @@
 <?php
 
+//Isso abaixo tambem posso configura no arquivo php.ini (e devemos)
+
 //Informar quais erros quero reportar
 // ini_set('error_reporting', E_ALL);
 
