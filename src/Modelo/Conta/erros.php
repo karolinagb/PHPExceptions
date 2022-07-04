@@ -10,7 +10,8 @@ error_reporting(E_ALL);
 //ativar log de erros:
 ini_set('log_errors', 1);
 
-//exibir ou nao exibir (0 ou 1) todos os erros:
+//exibir ou nao exibir (0 ou 1) todos os erros: 
+//Serve tb para nao exibir erros para o usuario no ambiente de produção
 ini_set('display_errors', 1);
 
 //arquivo onde vai salvar os logs:
